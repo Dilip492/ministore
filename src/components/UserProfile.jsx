@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 export const UserProfile = () => {
 
@@ -87,6 +88,7 @@ export const UserProfile = () => {
                        <button onClick={handlelogout} className='logout-btn'>logout</button>
                     </div>
                     </section>
+                    <Toaster></Toaster>
                 </div>
             </div>
         </div>
