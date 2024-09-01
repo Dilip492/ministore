@@ -5,11 +5,31 @@ export const UserProfile = () => {
 
     const navigate = useNavigate();
 
-    const handlelogout = () =>{
+    const handlelogout = async() =>{
+        try {
+            
+            const response =  await fetch("https://backend-nodejs-deploy-1.onrender.com/auth/logout" , {
+                  method:"POST",
+                  headers:{
+                     "Content-Type": "application/json"
+                  }
+                  , 
+                  credentials:"include",
+              } )
+      
+              const output = await response.json();
+              if(output.message){
+                  navigate('/login')
+                  window.location.reload();
+                  toast.success("Logout successfully")
+              }
+        } catch (error) {
 
-        localStorage.removeItem('token');
+            // alert(error.message)
+            toast.error(error.message)
+            
+        }
 
-        navigate("/login")
     }
     return (
         <div>

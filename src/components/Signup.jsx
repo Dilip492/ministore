@@ -41,11 +41,12 @@ const SignupForm = () => {
 
         try {
 
-            const response = await fetch("http://localhost:5000/auth/register", {
+            const response = await fetch("https://backend-nodejs-deploy-1.onrender.com/auth/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials:"include",
                 body: JSON.stringify(userdata)
             });
 
@@ -78,7 +79,7 @@ const SignupForm = () => {
     const handleGoogleLogin = () => {
 
         window.open(
-            "http://localhost:5000/auth/google",
+            "https://backend-nodejs-deploy-1.onrender.com/auth/google",
 
         );
 
