@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+
 
 export const UserProfile = () => {
 
@@ -22,12 +22,12 @@ export const UserProfile = () => {
               if(output.message){
                   navigate('/login')
                   window.location.reload();
-                  toast.success("Logout successfully")
+                  
               }
         } catch (error) {
 
-            // alert(error.message)
-            toast.error(error.message)
+            alert(error.message)
+           
             
         }
 
@@ -88,7 +88,7 @@ export const UserProfile = () => {
                        <button onClick={handlelogout} className='logout-btn'>logout</button>
                     </div>
                     </section>
-                    <Toaster></Toaster>
+                   
                 </div>
             </div>
         </div>
